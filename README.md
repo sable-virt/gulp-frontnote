@@ -1,4 +1,4 @@
-gulp-stylenote
-==============
+gulp-frontnote
+===============
 
-スタイルガイドジェネレーターStyleNoteのGulpプラグイン
+スタイルガイドジェネレーターFrontNoteのGulpプラグイン
