@@ -1,4 +1,3 @@
-// through2はnodeのtransform streamをラップするもの
 var through = require('through2'),
     styleGuide = require('frontnote');
 
@@ -9,13 +8,21 @@ var through = require('through2'),
  */
 function FrontNote(options) {
     var files = [];
-    return through.obj(function(file,encoding, callback) {
-        this.push(file);
-        files.push(file.path);
-        callback();
-    }, function(callback) {
+    var stream = through.obj(function(file,encoding, callback) {
+        if (file.isNull()) {
+            this.push(file);
+            return callback();
+        }
+        if (file.isBuffer()) {
+            files.push(file.path);
+            this.push(file);
+        }
+        return callback();
+    });
+    stream.on('finish', function(callback) {
         styleGuide(files,options,callback);
     });
+    return stream;
 }
 // プラグイン関数をエクスポート
 module.exports = FrontNote;
