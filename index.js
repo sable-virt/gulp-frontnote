@@ -26,7 +26,6 @@ function FrontNote(options) {
         return callback();
     });
     stream.on('finish', function(callback) {
-        console.log(files);
         styleGuide(files,options,callback);
     });
     return stream;
