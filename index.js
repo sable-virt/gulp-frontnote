@@ -1,4 +1,5 @@
 var through = require('through2'),
+    path = require('path'),
     styleGuide = require('frontnote');
 
 /**
@@ -14,12 +15,18 @@ function FrontNote(options) {
             return callback();
         }
         if (file.isBuffer()) {
-            files.push(file.path);
+            var filepath = path.relative(__dirname,file.path);
+            if (options.cwd) {
+                var reg = new RegExp('^' + options.cwd + '/');
+                filepath = filepath.replace(reg,'');
+            }
+            files.push(filepath);
             this.push(file);
         }
         return callback();
     });
     stream.on('finish', function(callback) {
+        console.log(files);
         styleGuide(files,options,callback);
     });
     return stream;
