@@ -19,7 +19,9 @@ function FrontNote(options) {
             if (options.cwd) {
                 var reg = new RegExp('^' + options.cwd + '/');
                 filepath = filepath.replace(reg,'');
+
             }
+            filepath = path.resolve(__dirname,filepath);
             files.push(filepath);
             this.push(file);
         }
