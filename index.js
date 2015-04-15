@@ -16,8 +16,12 @@ function gulpFrontNote(options) {
         this.push(file);
         callback();
     },function(callback) {
-        note.render(files, callback);
+        note.render(files,function() {
+            stream.resume();
+            callback();
+        });
     });
+    stream.pause();
     return stream;
 }
 // プラグイン関数をエクスポート
