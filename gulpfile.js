@@ -1,9 +1,9 @@
 var gulp = require('gulp');
-var gsg = require('./index');
+var frontnote = require('./index');
 
 gulp.task('default', function() {
-    gulp.src('../frontnote/test/sample/**/*.scss')
-        .pipe(gsg({
+    gulp.src('sample/*.scss')
+        .pipe(frontnote({
             out: './docs',
             verbose: false,
             clean: true
