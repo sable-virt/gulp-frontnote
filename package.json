@@ -26,11 +26,11 @@
     "frontnote"
   ],
   "dependencies": {
-    "frontnote": "^0.1.0",
-    "through2": "^0.5.1"
+    "frontnote": "^0.1.2",
+    "through2": "^0.6.5"
   },
   "devDependencies": {
-    "gulp": "^3.8.5"
+    "gulp": "^3.8.11"
   },
   "bugs": {
     "url": "https://github.com/frontainer/gulp-frontnote/issues"
