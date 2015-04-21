@@ -11,12 +11,16 @@ function gulpFrontNote(options) {
     var note = new FrontNote(options);
     var stream = through.obj(function(file,encoding, callback) {
         if (file.isBuffer()) {
-            files.push(file.path);
+            files.push(file);
         }
-        this.push(file);
         callback();
     },function(callback) {
-        note.render(files,function() {
+        var pathes = [];
+        files.forEach(function(file) {
+            this.push(file);
+            pathes.push(file.path);
+        }.bind(this));
+        note.render(pathes,function() {
             stream.resume();
             callback();
         });
