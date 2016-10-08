@@ -2,10 +2,10 @@ var gulp = require('gulp');
 var frontnote = require('./index');
 
 gulp.task('default', function() {
-    gulp.src('sample/**/*.scss')
+    return gulp.src('sample/**/*.scss')
         .pipe(frontnote({
             out: './docs',
-            verbose: false,
+            verbose: true,
             clean: true
         })).pipe(gulp.dest('./dest'))
 });

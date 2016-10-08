@@ -20,7 +20,7 @@ function gulpFrontNote(options) {
             this.push(file);
             pathes.push(file.path);
         }.bind(this));
-        note.render(pathes,function() {
+        note.render(pathes).subscribe(function(){
             stream.resume();
             callback();
         });
