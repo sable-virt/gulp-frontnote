@@ -9,7 +9,7 @@
   },
   "author": "frontainer <frontainer@gmail.com> (http://frontainer.com)",
   "engines": {
-    "node": ">=0.10.0"
+    "node": ">=5.0.0"
   },
   "scripts": {
     "test": ""
@@ -26,7 +26,7 @@
     "frontnote"
   ],
   "dependencies": {
-    "frontnote": "^1.1.1",
+    "frontnote": "^2.0.2",
     "through2": "^2.0.0"
   },
   "devDependencies": {
