@@ -1,6 +1,10 @@
 {
   "name": "gulp-frontnote",
+<<<<<<< HEAD
+  "version": "1.0.3",
+=======
   "version": "2.0.0",
+>>>>>>> develop
   "description": "StyleGuide Generator for Gulp",
   "license": "MIT",
   "repository": {
@@ -26,7 +30,11 @@
     "frontnote"
   ],
   "dependencies": {
+<<<<<<< HEAD
+    "frontnote": "^1.1.2",
+=======
     "frontnote": "^2.0.3",
+>>>>>>> develop
     "through2": "^2.0.0"
   },
   "devDependencies": {
